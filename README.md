@@ -11,7 +11,7 @@
 | **F1-Score** | 92.98% |
 
 ## 🚀 Live Demo
-**[ALLOY-X Live Demo](https://your-render-url.onrender.com)**
+**[ALLOY-X Live Demo](https://alloy-x.onrender.com)**
 
 **Built by: Faiz Ahmed | Machine Vision Engineer**
 
