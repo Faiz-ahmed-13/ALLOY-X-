@@ -11,11 +11,12 @@ import time
 import plotly.graph_objects as go
 import plotly.express as px
 from datetime import datetime
+import base64
 
 # Page configuration
 st.set_page_config(
     page_title="ALLOY-X | AI Defect Detection",
-    page_icon="🔍",
+    page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -23,6 +24,19 @@ st.set_page_config(
 # Custom CSS with white text for specific elements
 st.markdown("""
 <style>
+    .stApp {
+        background-color: #0a0a0a !important;
+    }
+    .main .block-container {
+        background-color: #0a0a0a !important;
+    }
+    section[data-testid="stSidebar"] {
+        background-color: #0a0a0a !important;
+    }
+    section[data-testid="stSidebar"] > div {
+        background-color: #0a0a0a !important;
+    }
+
     .main-header {
         font-size: 3.5rem;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -35,7 +49,7 @@ st.markdown("""
     
     .sub-header {
         font-size: 1.5rem;
-        color: white !important;  /* Changed to white */
+        color: white !important;
         border-left: 4px solid #667eea;
         padding-left: 1rem;
         margin: 1.5rem 0 1rem 0;
@@ -123,16 +137,16 @@ st.markdown("""
         margin: 0.5rem;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         border-left: 4px solid #667eea;
-        color: #2c3e50 !important;  /* Fixed: Dark text on white background */
+        color: #2c3e50 !important;
     }
     
     .feature-card h4 {
-        color: #2c3e50 !important;  /* Fixed: Dark text for headings */
+        color: #2c3e50 !important;
         margin-bottom: 0.5rem;
     }
     
     .feature-card p {
-        color: #5a6c7d !important;  /* Fixed: Dark text for paragraphs */
+        color: #5a6c7d !important;
     }
     
     /* White text for sidebar buttons */
@@ -217,7 +231,10 @@ def create_confidence_gauge(confidence, is_defective):
 
 def main():
     # Header Section
-    st.markdown('<h1 class="main-header">🔍 ALLOY-X AI Defect Detection System</h1>', unsafe_allow_html=True)
+    with open("alloyx_logo.png", "rb") as f:
+        logo_b64 = base64.b64encode(f.read()).decode()
+    st.markdown(f'<h1 class="main-header"><img src="data:image/png;base64,{logo_b64}" style="height:60px; vertical-align:middle; margin-right:12px;">ALLOY-X AI Defect Detection System</h1>', unsafe_allow_html=True)
+    st.markdown("---")
     
     st.markdown("""
     <div style='text-align: center; font-size: 1.2rem; color: #7f8c8d; margin-bottom: 2rem;'>
