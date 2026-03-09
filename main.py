@@ -16,7 +16,7 @@ import base64
 # Page configuration
 st.set_page_config(
     page_title="ALLOY-X | AI Defect Detection",
-    page_icon="🛡️",
+    page_icon="logo.png",
     layout="wide",
     initial_sidebar_state="expanded"
 )
