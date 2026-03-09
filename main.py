@@ -30,11 +30,56 @@ st.markdown("""
     .main .block-container {
         background-color: #0a0a0a !important;
     }
-    section[data-testid="stSidebar"] {
+    header[data-testid="stHeader"] {
         background-color: #0a0a0a !important;
     }
+    section[data-testid="stSidebar"] {
+        background-color: #141414 !important;
+    }
     section[data-testid="stSidebar"] > div {
-        background-color: #0a0a0a !important;
+        background-color: #141414 !important;
+    }
+    section[data-testid="stSidebar"] * {
+        color: white !important;
+    }
+    [data-testid="stMetricLabel"] {
+        color: white !important;
+    }
+    [data-testid="stMetricValue"] {
+        color: white !important;
+    }
+    .stText {
+        color: white !important;
+    }
+    .streamlit-expanderContent {
+        color: white !important;
+    }
+    .streamlit-expanderHeader {
+        color: white !important;
+    }
+    [data-testid="stFileUploaderFileName"] {
+        color: white !important;
+    }
+    [data-testid="stImageCaption"] {
+        color: white !important;
+    }
+    [data-testid="stExpander"] summary {
+        color: white !important;
+    }
+    [data-testid="stExpander"] summary span {
+        color: white !important;
+    }
+    [data-testid="stSpinner"] p {
+    color: white !important;
+    }
+    [data-testid="stFileUploaderFileData"] {
+    color: white !important;
+    }
+    [data-testid="stFileUploaderFileData"] small {
+    color: white !important;
+    }
+    .stMarkdown p {
+    color: white !important;
     }
 
     .main-header {
@@ -53,6 +98,10 @@ st.markdown("""
         border-left: 4px solid #667eea;
         padding-left: 1rem;
         margin: 1.5rem 0 1rem 0;
+    }
+            
+    .stMarkdown h3 {
+        color: white !important;
     }
     
     .metric-card {
@@ -226,7 +275,12 @@ def create_confidence_gauge(confidence, is_defective):
         }
     ))
     
-    fig.update_layout(height=300)
+    fig.update_layout(
+        height=300,
+        paper_bgcolor="#0a0a0a",
+        plot_bgcolor="#0a0a0a",
+        font={"color": "white"}
+    )
     return fig
 
 def main():
